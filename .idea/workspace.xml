@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e480056e-4261-4f8d-b7a8-6ce1706c098b" name="Changes" comment="made sure the database is working" />
+    <list default="true" id="e480056e-4261-4f8d-b7a8-6ce1706c098b" name="Changes" comment="made sure the database is working">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opportunia_mentor.db" beforeDir="false" afterPath="$PROJECT_DIR$/opportunia_mentor.db" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,7 +87,7 @@
       <workItem from="1749652016367" duration="2076000" />
       <workItem from="1749710446137" duration="32000" />
       <workItem from="1749773795457" duration="10123000" />
-      <workItem from="1749784204547" duration="676000" />
+      <workItem from="1749784204547" duration="1344000" />
     </task>
     <task id="LOCAL-00001" summary="made sure the database is working">
       <option name="closed" value="true" />
