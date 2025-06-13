@@ -5,7 +5,6 @@ from passlib.context import CryptContext
 from backend.schemas import UserCreate
 from pydantic import BaseModel
 
-# Login request model
 class LoginRequest(BaseModel):
     username: str
     password: str
@@ -40,5 +39,28 @@ async def login(login_data: LoginRequest):
         if not user or not pwd_context.verify(login_data.password, user.hashed_password):
             raise HTTPException(status_code=401, detail="Invalid credentials")
         return {"message": "Login successful"}
+    finally:
+        db.close()
+
+@router.get("/me")
+async def get_current_user(username: str):
+    db = SessionLocal()
+    try:
+        user = db.query(User).filter(User.username == username).first()
+        if not user:
+            raise HTTPException(status_code=404, detail="User not found")
+        return {"username": user.username, "bio": user.profile.bio if user.profile else None}
+    finally:
+        db.close()
+
+@router.get("/courses")
+async def get_user_courses(username: str):
+    db = SessionLocal()
+    try:
+        user = db.query(User).filter(User.username == username).first()
+        if not user:
+            raise HTTPException(status_code=404, detail="User not found")
+        courses = [{"id": c.id, "title": c.title, "description": c.description} for c in user.courses]
+        return {"username": user.username, "courses": courses}
     finally:
         db.close()
